@@ -122,7 +122,7 @@ app.post("/signup", async (req, res) => {
         from: process.env.EMAIL_USER,
         to: email,
         subject: "Email Verification",
-        text: `Please click on the following link to verify your email: ${process.env.LOCAL_PORT}/verify/${verificationToken}`,
+        text: `Please click on the following link to verify your email: ${process.env.EXTERNAL_PORT}/verify/${verificationToken}`,
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
